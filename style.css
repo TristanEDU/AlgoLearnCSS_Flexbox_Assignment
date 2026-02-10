@@ -1,0 +1,125 @@
+body {
+	display: flex;
+	flex-direction: column;
+	background: conic-gradient(from 100deg at 0 0, red, blue, black, red);
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	list-style: none;
+}
+
+main {
+	width: 80vw;
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+
+#hero {
+	background-color: rgba(51, 255, 0, 0.486);
+	/* background: conic-gradient(from 1.5turn at 31.5% 30%, red, blue, green); */
+	padding: 2rem;
+	border: solid transparent;
+	border-radius: 5rem;
+	margin: 3rem;
+}
+
+#hero header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#hero-figure img {
+	/* flex: 1; */
+	border: solid 5px red;
+	border-radius: 105rem;
+}
+
+#hero-header-text {
+	display: flex;
+	flex-direction: column;
+	/* flex: 2; */
+	align-items: center;
+}
+
+#hero-header-text h1 {
+	font-size: 80px;
+	background: linear-gradient(90deg, red 10%, blue, black 90%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin: 0;
+}
+
+.tagline {
+	font-size: 20px;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+#hero-body {
+	margin: 0 6rem;
+}
+
+#hero-body p {
+	font-size: 22px;
+}
+
+#hero footer {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+}
+
+#hero footer .btn {
+	--magic-rainbow-color-0: hsl(1deg, 100%, 55%);
+	/* --magic-rainbow-color-1: hsl(25deg, 100%, 50%); */
+	/* --magic-rainbow-color-2: hsl(40deg, 100%, 50%); */
+	/* --magic-rainbow-color-3: hsl(130deg, 100%, 40%); */
+	--magic-rainbow-color-4: hsl(230deg, 100%, 45%);
+	/* --magic-rainbow-color-5: hsl(240deg, 100%, 45%); */
+	--magic-rainbow-color-6: hsl(260deg, 100%, 55%);
+
+	transition:
+		--magic-rainbow-color-0 1000ms linear,
+		--magic-rainbow-color-2 1000ms linear,
+		--magic-rainbow-color-3 1000ms linear,
+		--magic-rainbow-color-4 1000ms linear,
+		--magic-rainbow-color-5 1000ms linear,
+		--magic-rainbow-color-6 1000ms linear;
+
+	background: conic-gradient(
+		/* 90deg, */
+		var(--magic-rainbow-color-0),
+		var(--magic-rainbow-color-1),
+		var(--magic-rainbow-color-2),
+		var(--magic-rainbow-color-3),
+		var(--magic-rainbow-color-4),
+		var(--magic-rainbow-color-5),
+		var(--magic-rainbow-color-6)
+	);
+
+	padding: 2rem 4rem;
+	border: 2px solid var(--magic-rainbow-color-5);
+	border-radius: 3rem;
+	font-size: 1.3rem;
+	/* background-color: var(--color); */
+}
+
+#featured-projects {
+	background-color: aqua;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#featured-projects-cards {
+	display: flex;
+	justify-content: space-around;
+}
+
+#skills-overview {
+	background-color: brown;
+}
