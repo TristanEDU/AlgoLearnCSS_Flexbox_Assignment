@@ -159,7 +159,7 @@
 				<div class="copyright">© 2026 Tristan Thomas. Designed & built with care.</div>
 			</div>
 		</footer>
-		<script>
+		<!-- <script>
 			const rainbowColors = [
 				"hsl(1deg, 100%, 55%)", // red
 				"hsl(25deg, 100%, 50%)", // orange
@@ -184,7 +184,7 @@
 				"--magic-rainbow-color-6",
 			];
 
-			// Register properties
+
 			colorNames.forEach((name, index) => {
 				CSS.registerProperty({
 					name,
@@ -199,12 +199,6 @@
 			let cycleIndex = 0;
 
 			window.setInterval(() => {
-				// Shift every color up by one position.
-				//
-				// `% paletteSize` is a handy trick to ensure
-				// that values "wrap around"; if we've exceeded
-				// the number of items in the array, it loops
-				// back to 0.
 				const nextColors = [
 					rainbowColors[(cycleIndex + 1) % paletteSize],
 					rainbowColors[(cycleIndex + 2) % paletteSize],
@@ -214,15 +208,12 @@
 					rainbowColors[(cycleIndex + 6) % paletteSize],
 				];
 
-				// Apply these new colors, update the DOM.
 				colorNames.forEach((name, index) => {
 					buttonElem.style.setProperty(name, nextColors[index]);
 				});
 
-				// increment the cycle count, so that we advance
-				// the colors in the next loop.
 				cycleIndex++;
 			}, intervalDelay);
-		</script>
+		</script> -->
 	</body>
 </html>

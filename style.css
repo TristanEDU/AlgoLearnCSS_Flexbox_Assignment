@@ -1,7 +1,15 @@
+@property --spin {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 0deg;
+}
+
 body {
+	--spin: 0deg;
 	display: flex;
 	flex-direction: column;
-	background: conic-gradient(from 100deg at 0 0, red, blue, black, red);
+	background: conic-gradient(from calc(100deg + var(--spin)) at 0 0, red, blue, black, red);
+	animation: background 30s linear infinite;
 }
 
 nav ul {
@@ -73,39 +81,55 @@ main {
 	gap: 60px;
 }
 
-#hero footer .btn {
-	--magic-rainbow-color-0: hsl(1deg, 100%, 55%);
-	/* --magic-rainbow-color-1: hsl(25deg, 100%, 50%); */
-	/* --magic-rainbow-color-2: hsl(40deg, 100%, 50%); */
-	/* --magic-rainbow-color-3: hsl(130deg, 100%, 40%); */
-	--magic-rainbow-color-4: hsl(230deg, 100%, 45%);
-	/* --magic-rainbow-color-5: hsl(240deg, 100%, 45%); */
-	--magic-rainbow-color-6: hsl(260deg, 100%, 55%);
-
-	transition:
-		--magic-rainbow-color-0 1000ms linear,
-		--magic-rainbow-color-2 1000ms linear,
-		--magic-rainbow-color-3 1000ms linear,
-		--magic-rainbow-color-4 1000ms linear,
-		--magic-rainbow-color-5 1000ms linear,
-		--magic-rainbow-color-6 1000ms linear;
-
-	background: conic-gradient(
-		/* 90deg, */
-		var(--magic-rainbow-color-0),
-		var(--magic-rainbow-color-1),
-		var(--magic-rainbow-color-2),
-		var(--magic-rainbow-color-3),
-		var(--magic-rainbow-color-4),
-		var(--magic-rainbow-color-5),
-		var(--magic-rainbow-color-6)
-	);
+#hero-view-work-button {
+	--border: navy;
+	--spin: 0deg;
 
 	padding: 2rem 4rem;
-	border: 2px solid var(--magic-rainbow-color-5);
+	border: 2px solid var(--border);
 	border-radius: 3rem;
 	font-size: 1.3rem;
-	/* background-color: var(--color); */
+
+	background: conic-gradient(
+		from calc(100deg + var(--spin)) at 0 0,
+		#ff3b3b 0%,
+		#09ff00 10%,
+		#5900ff 20%,
+		#5cff00 30%,
+		#ff0000 40%,
+		#0099ff 50%,
+		#5cff3b 60%,
+		#c200ff 70%,
+		#fbff00 80%,
+		#ff3b3b 100%
+	);
+
+	animation: button_rainbow 20s linear infinite;
+}
+#hero-contact-me-button {
+	--border: navy;
+	--spin: 0deg;
+
+	padding: 2rem 4rem;
+	border: 2px solid var(--border);
+	border-radius: 3rem;
+	font-size: 1.3rem;
+
+	background: conic-gradient(
+		from calc(100deg + var(--spin)) at 100% 100%,
+		#ff3b3b 0%,
+		#09ff00 10%,
+		#5900ff 20%,
+		#5cff00 30%,
+		#ff0000 40%,
+		#0099ff 50%,
+		#5cff3b 60%,
+		#c200ff 70%,
+		#fbff00 80%,
+		#ff3b3b 100%
+	);
+
+	animation: button_rainbow 20s linear infinite;
 }
 
 #featured-projects {
@@ -122,4 +146,15 @@ main {
 
 #skills-overview {
 	background-color: brown;
+}
+
+@keyframes background {
+	to {
+		--spin: 360deg;
+	}
+}
+@keyframes button_rainbow {
+	to {
+		--spin: 360deg;
+	}
 }
