@@ -1,3 +1,4 @@
+/* ========= THEME VARIABLES & COUNTERS ========= */
 @property --spin {
 	syntax: "<angle>";
 	inherits: false;
@@ -9,15 +10,16 @@
 	symbols: 🚀 🛰️ 🔭 🪐;
 	suffix: " ";
 }
-
+/* ========= GLOBAL LAYOUT & NAVIGATION ========= */
 body {
 	--spin: 0deg;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	background: conic-gradient(from calc(100deg + var(--spin)) at 0 0, red, blue, black, red);
 	animation: background 30s linear infinite;
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 header {
@@ -37,9 +39,11 @@ nav ul {
 
 main {
 	width: 80vw;
-	margin-left: 10vw;
-	margin-right: 10vw;
+	/* margin-left: 10vw; */
+	/* margin-right: 10vw; */
 }
+
+/* ========= HERO SECTION ========= */
 
 #hero {
 	background-color: rgba(51, 255, 0, 0.486);
@@ -57,10 +61,16 @@ main {
 	flex-wrap: wrap;
 }
 
+#hero-figure {
+	display: flex;
+	justify-content: center;
+}
+
 #hero-figure img {
 	/* flex: 1; */
 	border: solid 5px red;
 	border-radius: 105rem;
+	width: 50%;
 }
 
 #hero-header-text {
@@ -77,6 +87,7 @@ main {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	margin: 0;
+	text-align: center;
 }
 
 .tagline {
@@ -98,6 +109,8 @@ main {
 	justify-content: center;
 	gap: 60px;
 }
+
+/* ========= CTA BUTTONS ========= */
 
 #hero-view-work-button,
 .btn {
@@ -151,6 +164,8 @@ main {
 	animation: button_rainbow 20s linear infinite;
 }
 
+/* ========= FEATURED PROJECTS ========= */
+
 #featured-projects {
 	background-color: aqua;
 	display: flex;
@@ -158,6 +173,7 @@ main {
 	align-items: center;
 	gap: 20px;
 	height: fit-content;
+	text-align: center;
 }
 
 #featured-projects-header {
@@ -208,6 +224,8 @@ main {
 	padding: 2rem;
 }
 
+/* ========= SKILLS OVERVIEW ========= */
+
 #skills-overview {
 	background-color: brown;
 	display: flex;
@@ -237,14 +255,16 @@ main {
 	flex-wrap: wrap;
 }
 
+/* ========= GLOBAL FOOTER ========= */
 #page-footer {
-  --spin: 0deg;
-  display: flex;
+	--spin: 0deg;
+	display: flex;
 	background-color: black;
 	color: white;
-  margin-top: 2rem;
-  padding: 2rem;
-  justify-content: center;
+	margin-top: 2rem;
+	padding: 2rem 0;
+	justify-content: center;
+	width: 100%;
 
 	background: conic-gradient(
 		from calc(95deg + var(--spin)) at 100% 100%,
@@ -261,34 +281,79 @@ main {
 	);
 }
 
-
 #page-footer div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
 }
 
 .brand {
-  margin: 0;
-  text-align: center;
+	margin: 0;
+	text-align: center;
 }
 
-#page-footer div .tagline{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-   margin: 0;
-   text-align: center;
+#page-footer div .tagline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	text-align: center;
 }
 
-#page-footer div nav{
-  display: flex;
-   gap: 2rem;
+#page-footer div nav {
+	display: flex;
+	gap: 2rem;
 }
 
+/* ========= RESPONSIVE TWEAKS ========= */
+@media only screen and (max-width: 1200px) {
+	header nav ul {
+		gap: 2rem;
+	}
 
+	header nav ul .btn {
+		padding: 0;
+		border: none;
+		/* border-radius: 3rem; */
+		font-size: 1.3rem;
+		background: none;
+	}
 
+	#page-footer {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 964px) {
+	main {
+		width: 95vw;
+	}
+
+	#featured-projects-cards {
+		flex-direction: column;
+		/* background-color: #000000; */
+		align-items: center;
+	}
+
+	.card {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	#hero-body {
+		margin: 2rem;
+	}
+
+	#hero-view-work-button, #hero-contact-me-button {
+		background: none;
+		border: none;
+
+	}
+}
+
+/* ========= ANIMATION KEYFRAMES ========= */
 @keyframes background {
 	to {
 		--spin: 360deg;
